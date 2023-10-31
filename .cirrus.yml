@@ -1,6 +1,9 @@
 container:
   image: debian:latest
 
+env:
+  CIRRUS_LOG_TIMESTAMP: true
+
 a_task:
   depends_on:
     - b
