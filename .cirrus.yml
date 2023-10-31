@@ -1,5 +1,15 @@
 container:
   image: debian:latest
 
-task:
+a_task:
+  depends_on:
+    - b
+  script: uname -a
+
+b_task:
+  depends_on:
+    - c
+  script: uname -a
+
+c_task:
   script: uname -a
