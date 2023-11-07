@@ -1,6 +1,9 @@
 container:
   image: debian:latest
 
+env:
+  CIRRUS_AGENT_VERSION: 1.123.0
+
 task:
   use_compute_credits: true
   some_file:
