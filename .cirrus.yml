@@ -1,8 +1,8 @@
 container:
-  image: golangci/golangci-lint:latest
+  image: debian:latest
 
 task:
-  use_compute_credits: true
+  clone_script: true
   some_file:
     path: test.txt
     from_contents: 123
