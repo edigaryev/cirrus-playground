@@ -3,8 +3,8 @@ container:
 
 task:
   clone_script: true
+  check_script:
+    - cat test.txt
   some_file:
     path: test.txt
     from_contents: 123
-  check_script:
-    - cat test.txt
