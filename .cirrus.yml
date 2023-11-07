@@ -5,6 +5,6 @@ task:
   use_compute_credits: true
   some_file:
     path: test.txt
-    file_contents: 123
+    from_contents: 123
   check_script:
     - cat test.txt
