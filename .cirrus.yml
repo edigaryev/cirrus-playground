@@ -1,10 +1,13 @@
 container:
   image: golangci/golangci-lint:latest
 
+env:
+  SMH: 123
+
 task:
   use_compute_credits: true
   some_file:
     path: test.txt
-    from_contents: experimental-features = flakes nix-command
+    variable_name: SMH
   check_script:
     - cat test.txt
