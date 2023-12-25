@@ -1,5 +1,7 @@
-container:
-  image: debian:latest
+freebsd_instance:
+  image: freebsd-14-0-release-amd64-ufs
+  cpu: 4
+  memory: 8GB
 
 task:
-  script: uname -a
+  check_script: uname -a
