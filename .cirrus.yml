@@ -5,7 +5,7 @@ persistent_worker:
       user: admin
       password: admin
       cpu: 4
-      memory: 12
+      memory: 13
   resources:
     tart-vms: 1.0
 
