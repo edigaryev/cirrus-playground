@@ -8,5 +8,6 @@ task:
     populate_script:
       - apt-get update && apt-get -y install git
       - git clone https://github.com/torvalds/linux.git
+      - rm -rf linux/.git
   check_script:
     - ls -la
