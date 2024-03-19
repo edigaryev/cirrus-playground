@@ -1,13 +1,14 @@
 container:
   image: debian:latest
+  cpu: 2
+  memory: 512
 
 task:
   kernel_cache:
-    folder: linux
-    fingerprint_key: linux
+    folder: nixpkgs
+    fingerprint_key: nixpkgs
     populate_script:
       - apt-get update && apt-get -y install git
-      - git clone https://github.com/torvalds/linux.git
-      - rm -rf linux/.git
+      - git clone https://github.com/NixOS/nixpkgs.git
   check_script:
     - ls -la
