@@ -1,7 +1,7 @@
 container:
   image: debian:latest
   cpu: 2
-  memory: 512
+  memory: 250
 
 task:
   kernel_cache:
