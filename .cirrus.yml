@@ -1,4 +1,7 @@
-persistent_worker: {}
+persistent_worker:
+  isolation:
+    container:
+      image: debian:latest
 
 task:
   kernel_cache:
