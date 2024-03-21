@@ -2,7 +2,6 @@ persistent_worker:
   isolation:
     container:
       image: debian:latest
-      memory: 128
 
 task:
   kernel_cache:
