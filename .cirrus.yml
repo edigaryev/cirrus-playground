@@ -1,5 +1,4 @@
-container:
-  image: debian:latest
+persistent_worker: {}
 
 task:
   kernel_cache:
