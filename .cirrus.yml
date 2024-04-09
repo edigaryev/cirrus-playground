@@ -1,14 +1,12 @@
-persistent_worker:
-  isolation:
-    container:
-      image: debian:latest
+container:
+  image: debian:latest
 
 task:
   kernel_cache:
-    folder: nixpkgs
-    fingerprint_key: nixpkgs
+    folder: blob/
+    fingerprint_key: blob
     populate_script:
-      - apt-get update && apt-get -y install git
-      - git clone https://github.com/NixOS/nixpkgs.git
+      - mkdir blob/ || true
+      - dd if=/dev/urandom of=blob/blob.bin bs=65536 count=4000
   check_script:
     - ls -la
