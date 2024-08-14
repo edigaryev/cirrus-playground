@@ -1,15 +1,7 @@
 persistent_worker:
   isolation:
-    vetu:
-      image: ghcr.io/cirruslabs/ubuntu:latest
-      user: admin
-      password: admin
-      cpu: 16
-      memory: 48
-      networking:
-        host: {}
-  resources:
-    vetu-vms: 1.0
+    container:
+      image: debian:latest
 
 task:
   script: uname -a
