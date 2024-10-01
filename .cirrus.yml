@@ -1,7 +1,5 @@
-persistent_worker:
-  isolation:
-    tart:
-      image: macos
+container:
+  image: debian:latest
 
 task:
-  script: uname -a
+  script: false
