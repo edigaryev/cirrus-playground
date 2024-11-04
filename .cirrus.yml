@@ -1,0 +1,9 @@
+persistent_worker:
+  isolation:
+    tart:
+      image: ghcr.io/cirruslabs/debian:latest
+  resources:
+    tart-vms: 1
+
+test_task:
+  test_script: uname -a
