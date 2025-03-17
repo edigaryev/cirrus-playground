@@ -1,0 +1,6 @@
+task:
+  macos_instance:
+    image: ghcr.io/cirruslabs/macos-runner:sequoia
+
+  check_script:
+    - python3 -c 'import socket, time; s=time.time(); print(socket.getfqdn("127.0.0.1")); e=time.time(); print(e - s)'
