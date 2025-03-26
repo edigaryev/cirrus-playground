@@ -1,0 +1,12 @@
+persistent_worker:
+  isolation:
+    tart:
+      image: macos
+
+task:
+  script: printenv
+
+env:
+  CIRRUS_CHACHA_ENABLED: true
+  CIRRUS_AGENT_VERSION: 0.140.6
+  CIRRUS_CLI_VERSION: 0.140.6
