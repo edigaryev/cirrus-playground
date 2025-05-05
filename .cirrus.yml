@@ -1,7 +1,5 @@
-persistent_worker:
-  isolation:
-    tart:
-      image: macos
+freebsd_instance:
+  image_family: freebsd-15-0-snap
 
 task:
   check_script: uname -a
