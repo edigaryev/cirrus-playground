@@ -1,5 +1,15 @@
+gcp_credentials: ENCRYPTED[3a1f375ef189caae9719b355c6bf8d512999cc449d664d8eae93be4181bb183f9efe6f1cf6ab1c3e95e2530f37906f35]
+
 freebsd_instance:
   image_family: freebsd-15-0-snap
+
+gce_instance:
+  image_project: freebsd-org-cloud-dev
+  image_family: freebsd-15-0-snap
+  zone: us-central1-a
+  cpu: 8
+  memory: 40GB
+  disk: 60
 
 task:
   check_script: uname -a
