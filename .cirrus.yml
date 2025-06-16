@@ -10,6 +10,7 @@ gce_instance:
   hostname: kekius.local
 
 task:
+  use_compute_credits: true
   check_script:
     - uname -a
     - hostname
