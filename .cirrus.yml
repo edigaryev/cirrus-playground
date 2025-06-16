@@ -14,3 +14,4 @@ task:
   check_script:
     - uname -a
     - hostname
+    - hostname -f
