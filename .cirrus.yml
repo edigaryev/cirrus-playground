@@ -1,13 +1,13 @@
 gcp_credentials: ENCRYPTED[3a1f375ef189caae9719b355c6bf8d512999cc449d664d8eae93be4181bb183f9efe6f1cf6ab1c3e95e2530f37906f35]
 
 gce_instance:
-  image_project: ubuntu-os-cloud
-  image_family: ubuntu-minimal-2410-amd64
-  zone: us-central1-a
+  image_project: debian-cloud
+  image_family: debian-12
+  zone: europe-west1-b
   cpu: 8
   memory: 40GB
   disk: 60
-  hostname: kekius.local
+  hostname: test.example.com
 
 task:
   use_compute_credits: true
