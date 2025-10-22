@@ -1,7 +1,7 @@
 load("cirrus", "env", "http", "fs")
 
 def main(ctx):
-  print("third run")
+  print("run 1")
 
   # Consult the actual rate limit value
   headers = {
