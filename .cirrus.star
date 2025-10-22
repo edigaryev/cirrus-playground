@@ -1,11 +1,25 @@
-load("cirrus", "http")
+load("cirrus", "env", "http", "fs")
 
 def on_task_completed(ctx):
-  resp1 = http.get("https://example.com")
-  print(resp1)
+  # Consult the actual rate limit value
+  headers = {
+    "Authorization": "Bearer " + env.get("CIRRUS_REPO_CLONE_TOKEN")
+  }
+  remaining = http.get("https://api.github.com/rate_limit", headers=headers).json()["rate"]["remaining"]
+  print("requests remaining until rate-limit", remaining)
 
-  # Delay for 3 seconds for the uncached "Date" header to reflect a different timepoint
-  http.get("https://httpbin.io/delay/3")
+  # Perform an operation that consumes GitHub API rate limit
+  print("making a request to list / directory contents...")
+  print(fs.readdir("/"))
 
-  resp2 = http.get("https://example.com")
-  print(resp2)
+  # Consult the actual rate limit value
+  remaining = http.get("https://api.github.com/rate_limit", headers=headers).json()["rate"]["remaining"]
+  print("requests remaining until rate-limit", remaining)
+
+  # Perform an operation that consumes GitHub API rate limit again
+  print("making a request to list / directory contents...")
+  print(fs.readdir("/"))
+
+  # Consult the actual rate limit value
+  remaining = http.get("https://api.github.com/rate_limit", headers=headers).json()["rate"]["remaining"]
+  print("requests remaining until rate-limit", remaining)
