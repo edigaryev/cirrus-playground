@@ -1,6 +1,6 @@
 load("cirrus", "env", "http", "fs")
 
-def on_task_completed(ctx):
+def main(ctx):
   # Consult the actual rate limit value
   headers = {
     "Authorization": "Bearer " + env.get("CIRRUS_REPO_CLONE_TOKEN")
@@ -23,3 +23,5 @@ def on_task_completed(ctx):
   # Consult the actual rate limit value
   remaining = http.get("https://api.github.com/rate_limit", headers=headers).json()["rate"]["remaining"]
   print("requests remaining until rate-limit", remaining)
+
+  return []
