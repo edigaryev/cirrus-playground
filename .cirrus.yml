@@ -1,0 +1,7 @@
+use_compute_credits: true
+
+container:
+  image: debian:latest
+
+task:
+  dummy_script: uname -a
