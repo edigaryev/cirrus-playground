@@ -1,6 +1,8 @@
 load("cirrus", "env", "http", "fs")
 
 def main(ctx):
+  print("second run")
+
   # Consult the actual rate limit value
   headers = {
     "Authorization": "Bearer " + env.get("CIRRUS_REPO_CLONE_TOKEN")
