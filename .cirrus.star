@@ -1,6 +1,6 @@
 load("cirrus", "env", "http", "fs")
 
-def main(ctx):
+def on_build_succeeded(ctx):
   check_rate_limit()
 
   # Perform an operation that consumes GitHub API rate limit
@@ -9,7 +9,7 @@ def main(ctx):
 
   check_rate_limit()
 
-  return []
+  #return []
 
 def check_rate_limit():
     # Consult the actual rate limit value
